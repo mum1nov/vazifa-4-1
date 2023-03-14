@@ -250,3 +250,14 @@ $m-br: 10px;
     outline: none;
     padding: 10px 12px !important;
 }
+.light{
+    box-shadow: var(--btn-shadow);
+    border-radius: calc($m-br/2);
+    border: none;
+    background-color: rgba(255, 255, 255, 0.698);
+    color: var(--text-color);
+}
+.button__wrapper{
+    display: flex;
+    gap: 30px;
+}

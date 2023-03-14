@@ -1,17 +1,26 @@
 const todoInput = document.querySelector('.js-input')
 const form = document.querySelector('.form')
-const body=document.querySelector("body")
+const body = document.querySelector("body")
 const taskContainer = document.querySelector('.task_container')
-const click=document.querySelector('.click')
-// const theme='dark'
-click.addEventListener('click',(e)=>{
+const click = document.querySelector('.click')
+const elLigth = document.querySelector('.light')
+
+click.addEventListener('click', (e) => {
     e.preventDefault();
-    body.classList.toggle('dark')
+    body.classList.add("dark")
     localStorage.setItem("theme","dark")
 })
-if (body.classList!="dark"){
-    body.classList.add(localStorage.getItem("theme"))
+
+elLigth.addEventListener('click', (e) => {
+    e.preventDefault();
+    body.classList.remove("dark")
+    localStorage.removeItem("theme")
+})
+
+if(localStorage.getItem("theme")=="dark"){
+    body.classList.add("dark")
 }
+
 form.addEventListener('submit', (evt) => {
     evt.preventDefault()
     const time = new Date();
@@ -39,7 +48,7 @@ taskContainer.addEventListener('click', (e) => {
         const isAgreeToDelete = confirm('Are sure delete this item?')
         if (isAgreeToDelete === true) {
             e.target.parentElement.parentElement.classList.add('remove-item')
-            setTimeout(()=>{
+            setTimeout(() => {
                 e.target.parentElement.parentElement.remove()
             }, 300)
         }

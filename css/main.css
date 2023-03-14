@@ -214,4 +214,17 @@ img {
   border: 1px solid grey !important;
   outline: none;
   padding: 10px 12px !important;
+}
+
+.light {
+  box-shadow: var(--btn-shadow);
+  border-radius: 5px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.698);
+  color: var(--text-color);
+}
+
+.button__wrapper {
+  display: flex;
+  gap: 30px;
 }/*# sourceMappingURL=main.css.map */
