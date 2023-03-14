@@ -3,11 +3,15 @@ const form = document.querySelector('.form')
 const body=document.querySelector("body")
 const taskContainer = document.querySelector('.task_container')
 const click=document.querySelector('.click')
+// const theme='dark'
 click.addEventListener('click',(e)=>{
     e.preventDefault();
     body.classList.toggle('dark')
-    localStorage.setItem()
+    localStorage.setItem("theme","dark")
 })
+if (body.classList!="dark"){
+    body.classList.add(localStorage.getItem("theme"))
+}
 form.addEventListener('submit', (evt) => {
     evt.preventDefault()
     const time = new Date();
